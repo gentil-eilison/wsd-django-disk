@@ -1,6 +1,17 @@
 from django.db import models
 
-# Create your models here.
+
+class RecordLabel(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Name')
+
+    class Meta:
+        verbose_name = 'Record Label'
+        verbose_name_plural = 'Record Labels'
+    
+    def __str__(self):
+        return self.name
+
+
 class Album(models.Model):
     name = models.CharField(max_length=150, verbose_name="Name")
     description = models.TextField(verbose_name='Description')
